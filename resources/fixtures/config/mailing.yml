@@ -1,0 +1,3 @@
+sync:
+  enabled: false
+  adapter: none

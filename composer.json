@@ -1,0 +1,30 @@
+{
+	"name": "mothership-ec/cog-mothership-mailing",
+	"description": "Mothership cogule for mailings, with synchronisation to popular third-party systems",
+	"keywords": ["mailing", "mothership", "mailings", "email", "newsletter", "campaign", "campaign monitor", "mailchimp"],
+	"homepage": "http://mothership.ec",
+	"license": "GPL-3.0+",
+	"authors": [
+		{
+			"name" : "The Mothership Development Team",
+			"email": "dev@mothership.ec"
+		}
+	],
+	"support": {
+		"wiki"  : "http://wiki.mothership.ec/Mailing_module",
+		"issues": "http://github.com/messagedigital/cog-mothership-mailing/issues"
+	},
+	"autoload": {
+		"psr-4": {
+			"Message\\Mothership\\Mailing\\"      : "src",
+			"Message\\Mothership\\Mailing\\Test\\": "tests"
+		}
+	},
+	"require": {
+		"php": ">=5.4.0",
+		"mothership-ec/cog" : "~4.0"
+	},
+	"suggest" : {
+		"mothership-ec/cog-mothership-campaign-monitor" : "Allows Campaign Monitor integration"
+	}
+}

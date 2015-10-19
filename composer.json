@@ -1,6 +1,6 @@
 {
 	"name": "mothership-ec/cog-mothership-mailing",
-	"description": "Mothership cogule for mailings, with synchronisation to popular third-party systems",
+	"description": "Mothership module for mailings, with synchronisation to popular third-party systems",
 	"keywords": ["mailing", "mothership", "mailings", "email", "newsletter", "campaign", "campaign monitor", "mailchimp"],
 	"homepage": "http://mothership.ec",
 	"license": "GPL-3.0+",

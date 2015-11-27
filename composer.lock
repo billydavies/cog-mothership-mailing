@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "22759fe9e587b9f01f940d97609c542d",
+    "hash": "e3d818545c2050627aeba0b3ce58865c",
+    "content-hash": "7661d4ce123509510adf1a0ce3e74dbe",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -518,16 +519,16 @@
         },
         {
             "name": "mothership-ec/cog",
-            "version": "4.13.0",
+            "version": "4.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mothership-ec/cog.git",
-                "reference": "d569d3401103454dca8615d75c0fea68694a759f"
+                "reference": "c8b2abf0674d0d6ae2a6ee0ada9390143bba254e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mothership-ec/cog/zipball/d569d3401103454dca8615d75c0fea68694a759f",
-                "reference": "d569d3401103454dca8615d75c0fea68694a759f",
+                "url": "https://api.github.com/repos/mothership-ec/cog/zipball/c8b2abf0674d0d6ae2a6ee0ada9390143bba254e",
+                "reference": "c8b2abf0674d0d6ae2a6ee0ada9390143bba254e",
                 "shasum": ""
             },
             "require": {
@@ -609,7 +610,151 @@
                 "cog",
                 "framework"
             ],
-            "time": "2015-10-09 16:31:08"
+            "time": "2015-11-17 16:42:42"
+        },
+        {
+            "name": "mothership-ec/cog-mothership-cp",
+            "version": "3.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mothership-ec/cog-mothership-cp.git",
+                "reference": "a196d8d37317fd6ceafaab9915aef2863f665c46"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mothership-ec/cog-mothership-cp/zipball/a196d8d37317fd6ceafaab9915aef2863f665c46",
+                "reference": "a196d8d37317fd6ceafaab9915aef2863f665c46",
+                "shasum": ""
+            },
+            "require": {
+                "mothership-ec/cog": "~4.0",
+                "mothership-ec/cog-user": "~2.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Message\\Mothership\\ControlPanel\\": "src",
+                    "Message\\Mothership\\ControlPanel\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "The Mothership Development Team",
+                    "email": "dev@mothership.ec"
+                }
+            ],
+            "description": "Cog module for the Mothership Control Panel",
+            "homepage": "http://mothership.ec",
+            "keywords": [
+                "CP",
+                "admin",
+                "cog",
+                "control panel",
+                "mothership"
+            ],
+            "time": "2015-10-23 15:07:49"
+        },
+        {
+            "name": "mothership-ec/cog-mothership-reports",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mothership-ec/cog-mothership-reports.git",
+                "reference": "f1a6fe7556b0072e41a34c292f1c99c710730091"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mothership-ec/cog-mothership-reports/zipball/f1a6fe7556b0072e41a34c292f1c99c710730091",
+                "reference": "f1a6fe7556b0072e41a34c292f1c99c710730091",
+                "shasum": ""
+            },
+            "require": {
+                "mothership-ec/cog": "~4.0",
+                "mothership-ec/cog-mothership-cp": "~3.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Message\\Mothership\\Report\\": "src",
+                    "Message\\Mothership\\Report\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "The Mothership Development Team",
+                    "email": "dev@mothership.ec"
+                }
+            ],
+            "description": "Mothership cogule for reports",
+            "homepage": "http://mothership.ec",
+            "keywords": [
+                "data",
+                "information",
+                "mothership",
+                "reporting",
+                "reports",
+                "stats"
+            ],
+            "time": "2015-10-07 09:50:19"
+        },
+        {
+            "name": "mothership-ec/cog-user",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mothership-ec/cog-user.git",
+                "reference": "70ab03451001ddbaa65643738cb175d4813e48ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mothership-ec/cog-user/zipball/70ab03451001ddbaa65643738cb175d4813e48ce",
+                "reference": "70ab03451001ddbaa65643738cb175d4813e48ce",
+                "shasum": ""
+            },
+            "require": {
+                "mothership-ec/cog": "~4.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Message\\User\\": "src",
+                    "Message\\User\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "The Mothership Development Team",
+                    "email": "dev@mothership.ec"
+                }
+            ],
+            "description": "Cog module for a very basic and extensible user system",
+            "homepage": "http://mothership.ec",
+            "keywords": [
+                "Users",
+                "account",
+                "accounts",
+                "cog",
+                "user"
+            ],
+            "time": "2015-09-15 12:58:16"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -886,16 +1031,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.7.5",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "06cb17c013a82f94a3d840682b49425cd00a2161"
+                "reference": "16bb1cb86df43c90931df65f529e7ebd79636750"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/06cb17c013a82f94a3d840682b49425cd00a2161",
-                "reference": "06cb17c013a82f94a3d840682b49425cd00a2161",
+                "url": "https://api.github.com/repos/symfony/console/zipball/16bb1cb86df43c90931df65f529e7ebd79636750",
+                "reference": "16bb1cb86df43c90931df65f529e7ebd79636750",
                 "shasum": ""
             },
             "require": {
@@ -904,7 +1049,6 @@
             "require-dev": {
                 "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.1",
-                "symfony/phpunit-bridge": "~2.7",
                 "symfony/process": "~2.1"
             },
             "suggest": {
@@ -921,7 +1065,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Console\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -939,20 +1086,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-25 08:32:23"
+            "time": "2015-11-18 09:54:26"
         },
         {
             "name": "symfony/debug",
-            "version": "v2.7.5",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "c79c361bca8e5ada6a47603875a3c964d03b67b1"
+                "reference": "0dbc119596f4afc82d9b2eb2a7e6a4af1ee763fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/c79c361bca8e5ada6a47603875a3c964d03b67b1",
-                "reference": "c79c361bca8e5ada6a47603875a3c964d03b67b1",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/0dbc119596f4afc82d9b2eb2a7e6a4af1ee763fa",
+                "reference": "0dbc119596f4afc82d9b2eb2a7e6a4af1ee763fa",
                 "shasum": ""
             },
             "require": {
@@ -964,8 +1111,7 @@
             },
             "require-dev": {
                 "symfony/class-loader": "~2.2",
-                "symfony/http-kernel": "~2.3.24|~2.5.9|~2.6,>=2.6.2",
-                "symfony/phpunit-bridge": "~2.7"
+                "symfony/http-kernel": "~2.3.24|~2.5.9|~2.6,>=2.6.2"
             },
             "type": "library",
             "extra": {
@@ -976,7 +1122,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Debug\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -994,7 +1143,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-14 08:41:38"
+            "time": "2015-10-30 20:10:21"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1049,24 +1198,21 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.3.33",
+            "version": "v2.3.35",
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "2d4e4e21e2b5e4720555811fe8f4a8873cfa0f0f"
+                "reference": "d72d4b276921c2388ac09a5a6716e10d57a6e89b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/2d4e4e21e2b5e4720555811fe8f4a8873cfa0f0f",
-                "reference": "2d4e4e21e2b5e4720555811fe8f4a8873cfa0f0f",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/d72d4b276921c2388ac09a5a6716e10d57a6e89b",
+                "reference": "d72d4b276921c2388ac09a5a6716e10d57a6e89b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -1077,7 +1223,10 @@
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Filesystem\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1095,7 +1244,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-29 10:34:03"
+            "time": "2015-11-18 08:19:46"
         },
         {
             "name": "symfony/finder",
@@ -1148,17 +1297,17 @@
         },
         {
             "name": "symfony/form",
-            "version": "v2.3.33",
+            "version": "v2.3.35",
             "target-dir": "Symfony/Component/Form",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "9bcbbf5756774916ff787545eacdf5c3a757767b"
+                "reference": "ae55dcd67d5f3f8614bf212e9083382179c9bbb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/9bcbbf5756774916ff787545eacdf5c3a757767b",
-                "reference": "9bcbbf5756774916ff787545eacdf5c3a757767b",
+                "url": "https://api.github.com/repos/symfony/form/zipball/ae55dcd67d5f3f8614bf212e9083382179c9bbb0",
+                "reference": "ae55dcd67d5f3f8614bf212e9083382179c9bbb0",
                 "shasum": ""
             },
             "require": {
@@ -1171,7 +1320,6 @@
             "require-dev": {
                 "doctrine/collections": "~1.0",
                 "symfony/http-foundation": "~2.2",
-                "symfony/phpunit-bridge": "~2.7",
                 "symfony/translation": "~2.0,>=2.0.5",
                 "symfony/validator": "~2.3.29"
             },
@@ -1188,7 +1336,10 @@
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Form\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1206,28 +1357,27 @@
             ],
             "description": "Symfony Form Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-21 06:03:51"
+            "time": "2015-11-23 10:02:49"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v2.7.5",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "e1509119f164a0d0a940d7d924d693a7a28a5470"
+                "reference": "e83a3d105ddaf5a113e803c904fdec552d1f1c35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/e1509119f164a0d0a940d7d924d693a7a28a5470",
-                "reference": "e1509119f164a0d0a940d7d924d693a7a28a5470",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/e83a3d105ddaf5a113e803c904fdec552d1f1c35",
+                "reference": "e83a3d105ddaf5a113e803c904fdec552d1f1c35",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
             },
             "require-dev": {
-                "symfony/expression-language": "~2.4",
-                "symfony/phpunit-bridge": "~2.7"
+                "symfony/expression-language": "~2.4"
             },
             "type": "library",
             "extra": {
@@ -1241,6 +1391,9 @@
                 },
                 "classmap": [
                     "Resources/stubs"
+                ],
+                "exclude-from-classmap": [
+                    "/Tests/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1259,21 +1412,21 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-22 13:49:29"
+            "time": "2015-11-20 17:41:18"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v2.3.33",
+            "version": "v2.3.35",
             "target-dir": "Symfony/Component/HttpKernel",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "80e4921aab689291ac6ca04f3c08255aa702fe30"
+                "reference": "a79bd3b40c73fd504d1e66ab6c40cdede509c600"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/80e4921aab689291ac6ca04f3c08255aa702fe30",
-                "reference": "80e4921aab689291ac6ca04f3c08255aa702fe30",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/a79bd3b40c73fd504d1e66ab6c40cdede509c600",
+                "reference": "a79bd3b40c73fd504d1e66ab6c40cdede509c600",
                 "shasum": ""
             },
             "require": {
@@ -1292,7 +1445,6 @@
                 "symfony/dependency-injection": "~2.2",
                 "symfony/dom-crawler": "~2.0,>=2.0.5",
                 "symfony/finder": "~2.0,>=2.0.5",
-                "symfony/phpunit-bridge": "~2.7",
                 "symfony/process": "~2.0,>=2.0.5",
                 "symfony/routing": "~2.2",
                 "symfony/stopwatch": "~2.3",
@@ -1315,7 +1467,10 @@
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\HttpKernel\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1333,28 +1488,27 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-25 09:08:49"
+            "time": "2015-11-23 10:44:06"
         },
         {
             "name": "symfony/intl",
-            "version": "v2.7.5",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
-                "reference": "35f902b232c10056e17d94a842160d44bb540838"
+                "reference": "6c6c3aa69f68aff72e48a9bfc11f24680e23eb2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/35f902b232c10056e17d94a842160d44bb540838",
-                "reference": "35f902b232c10056e17d94a842160d44bb540838",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/6c6c3aa69f68aff72e48a9bfc11f24680e23eb2d",
+                "reference": "6c6c3aa69f68aff72e48a9bfc11f24680e23eb2d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
             },
             "require-dev": {
-                "symfony/filesystem": "~2.1",
-                "symfony/phpunit-bridge": "~2.7"
+                "symfony/filesystem": "~2.1"
             },
             "suggest": {
                 "ext-intl": "to use the component with locales other than \"en\""
@@ -1374,6 +1528,9 @@
                 ],
                 "files": [
                     "Resources/stubs/functions.php"
+                ],
+                "exclude-from-classmap": [
+                    "/Tests/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1408,11 +1565,11 @@
                 "l10n",
                 "localization"
             ],
-            "time": "2015-09-09 17:53:06"
+            "time": "2015-11-18 13:41:01"
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v2.6.11",
+            "version": "v2.6.12",
             "target-dir": "Symfony/Component/OptionsResolver",
             "source": {
                 "type": "git",
@@ -1511,23 +1668,20 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v2.7.5",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
-                "reference": "f8ea7aa472f0e3f8cdf43287caa72a70ff5c088c"
+                "reference": "49d76463a54d8b3005fa58f3b8df41d0ae206eaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/f8ea7aa472f0e3f8cdf43287caa72a70ff5c088c",
-                "reference": "f8ea7aa472f0e3f8cdf43287caa72a70ff5c088c",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/49d76463a54d8b3005fa58f3b8df41d0ae206eaa",
+                "reference": "49d76463a54d8b3005fa58f3b8df41d0ae206eaa",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -1538,7 +1692,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\PropertyAccess\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1567,21 +1724,21 @@
                 "property path",
                 "reflection"
             ],
-            "time": "2015-08-24 07:13:45"
+            "time": "2015-11-18 13:41:01"
         },
         {
             "name": "symfony/routing",
-            "version": "v2.3.33",
+            "version": "v2.3.35",
             "target-dir": "Symfony/Component/Routing",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "9ed0492ba2dbfc0d3c329ac742c08d849a0f000c"
+                "reference": "08a4065c47b45a1785101aabb29082fe415cec6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/9ed0492ba2dbfc0d3c329ac742c08d849a0f000c",
-                "reference": "9ed0492ba2dbfc0d3c329ac742c08d849a0f000c",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/08a4065c47b45a1785101aabb29082fe415cec6c",
+                "reference": "08a4065c47b45a1785101aabb29082fe415cec6c",
                 "shasum": ""
             },
             "require": {
@@ -1592,7 +1749,6 @@
                 "psr/log": "~1.0",
                 "symfony/config": "~2.2",
                 "symfony/http-foundation": "~2.3",
-                "symfony/phpunit-bridge": "~2.7",
                 "symfony/yaml": "~2.0,>=2.0.5"
             },
             "suggest": {
@@ -1609,7 +1765,10 @@
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Routing\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1627,7 +1786,7 @@
             ],
             "description": "Symfony Routing Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-11 07:57:18"
+            "time": "2015-11-18 08:19:46"
         },
         {
             "name": "symfony/templating",
@@ -1675,17 +1834,17 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v2.3.33",
+            "version": "v2.3.35",
             "target-dir": "Symfony/Component/Translation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "7560d045145b5b08f798524e7a31743cf2fccd76"
+                "reference": "7f01eb66bb0c677f30f5107a8848f8e1fc6ec9a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/7560d045145b5b08f798524e7a31743cf2fccd76",
-                "reference": "7560d045145b5b08f798524e7a31743cf2fccd76",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/7f01eb66bb0c677f30f5107a8848f8e1fc6ec9a7",
+                "reference": "7f01eb66bb0c677f30f5107a8848f8e1fc6ec9a7",
                 "shasum": ""
             },
             "require": {
@@ -1694,7 +1853,6 @@
             "require-dev": {
                 "symfony/config": "~2.3,>=2.3.12",
                 "symfony/intl": "~2.3",
-                "symfony/phpunit-bridge": "~2.7",
                 "symfony/yaml": "~2.2"
             },
             "suggest": {
@@ -1710,7 +1868,10 @@
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Translation\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1728,7 +1889,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-03 20:55:07"
+            "time": "2015-11-18 08:19:46"
         },
         {
             "name": "symfony/twig-bridge",
@@ -1802,17 +1963,17 @@
         },
         {
             "name": "symfony/twig-bundle",
-            "version": "v2.3.33",
+            "version": "v2.3.35",
             "target-dir": "Symfony/Bundle/TwigBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/twig-bundle.git",
-                "reference": "d507e06e6239ae35d90d8af357722bf0a233841c"
+                "reference": "dd08624d47ef8512ca222c0f034b17de96da8192"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/twig-bundle/zipball/d507e06e6239ae35d90d8af357722bf0a233841c",
-                "reference": "d507e06e6239ae35d90d8af357722bf0a233841c",
+                "url": "https://api.github.com/repos/symfony/twig-bundle/zipball/dd08624d47ef8512ca222c0f034b17de96da8192",
+                "reference": "dd08624d47ef8512ca222c0f034b17de96da8192",
                 "shasum": ""
             },
             "require": {
@@ -1824,7 +1985,6 @@
                 "symfony/config": "~2.2",
                 "symfony/dependency-injection": "~2.2",
                 "symfony/framework-bundle": "~2.1",
-                "symfony/phpunit-bridge": "~2.7",
                 "symfony/stopwatch": "~2.2",
                 "symfony/yaml": "~2.3"
             },
@@ -1837,7 +1997,10 @@
             "autoload": {
                 "psr-0": {
                     "Symfony\\Bundle\\TwigBundle\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1855,21 +2018,21 @@
             ],
             "description": "Symfony TwigBundle",
             "homepage": "https://symfony.com",
-            "time": "2015-08-26 16:52:32"
+            "time": "2015-11-18 08:19:46"
         },
         {
             "name": "symfony/validator",
-            "version": "v2.3.33",
+            "version": "v2.3.35",
             "target-dir": "Symfony/Component/Validator",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "4cda7707bb32a63ead9981e416356f30133078f3"
+                "reference": "fbc64813991dbc7800aa46cfc3aa320627297582"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/4cda7707bb32a63ead9981e416356f30133078f3",
-                "reference": "4cda7707bb32a63ead9981e416356f30133078f3",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/fbc64813991dbc7800aa46cfc3aa320627297582",
+                "reference": "fbc64813991dbc7800aa46cfc3aa320627297582",
                 "shasum": ""
             },
             "require": {
@@ -1881,7 +2044,6 @@
                 "symfony/config": "~2.2",
                 "symfony/http-foundation": "~2.1",
                 "symfony/intl": "~2.3",
-                "symfony/phpunit-bridge": "~2.7",
                 "symfony/yaml": "~2.0,>=2.0.5"
             },
             "suggest": {
@@ -1900,7 +2062,10 @@
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Validator\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1918,7 +2083,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-11 07:57:18"
+            "time": "2015-11-18 08:19:46"
         },
         {
             "name": "symfony/yaml",

@@ -118,7 +118,7 @@ class Loader
 				$subscriber->subscribed = (bool) $row->subscribed;
 
 				if ($row->created_at) {
-					$subscriber->authorship->create(new DateTimeImmutable(date('c', $row->creatd_at)), $row->created_by);
+					$subscriber->authorship->create(new DateTimeImmutable(date('c', $row->created_at)), $row->created_by);
 				}
 				if ($row->updated_at) {
 					$subscriber->authorship->update(new DateTimeImmutable(date('c', $row->updated_at)), $row->updated_by);

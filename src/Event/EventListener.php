@@ -8,8 +8,17 @@ use Message\Cog\Event\SubscriberInterface;
 use Message\Mothership\Report\Event as ReportEvents;
 use Message\Mothership\Report\Filter\ModifyQueryInterface;
 
+/**
+ * Class EventListener
+ * @package Message\Mothership\Mailing\Event
+ *
+ * @author  Thomas Marchant <thomas@mothership.ec>
+ */
 class EventListener extends BaseListener implements SubscriberInterface
 {
+	/**
+	 * {@inheritDoc}
+	 */
 	static public function getSubscribedEvents()
 	{
 		return [
@@ -17,11 +26,16 @@ class EventListener extends BaseListener implements SubscriberInterface
 				['registerReports']
 			],
 			Subscribers::MAILING_SUBSCRIBER_REPORT => [
-				['applyReportFilters']
+				['applySubscriberReportFilters']
 			],
 		];
 	}
 
+	/**
+	 * Register reports to reports module
+	 *
+	 * @param ReportEvents\BuildReportCollectionEvent $event
+	 */
 	public function registerReports(ReportEvents\BuildReportCollectionEvent $event)
 	{
 		foreach ($this->get('mailing.reports') as $report) {
@@ -29,7 +43,12 @@ class EventListener extends BaseListener implements SubscriberInterface
 		}
 	}
 
-	public function applyReportFilters(ReportEvents\ReportEvent $event)
+	/**
+	 * Apply filters to subscriber
+	 *
+	 * @param ReportEvents\ReportEvent $event
+	 */
+	public function applySubscriberReportFilters(ReportEvents\ReportEvent $event)
 	{
 		foreach ($event->getQueryBuilders() as $queryBuilder) {
 			foreach ($event->getFilters() as $filter) {

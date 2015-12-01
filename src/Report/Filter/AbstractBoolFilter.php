@@ -6,8 +6,19 @@ use Message\Cog\DB;
 use Message\Mothership\Report\Filter\Choices;
 use Message\Mothership\Report\Filter\ModifyQueryInterface;
 
+/**
+ * Class AbstractBoolFilter
+ * @package Message\Mothership\Mailing\Report\Filter
+ *
+ * @author  Thomas Marchant <thomas@mothership.ec>
+ *
+ * Abstract class representing a filter that only has yes or no options
+ */
 abstract class AbstractBoolFilter extends Choices implements ModifyQueryInterface
 {
+	/**
+	 * Set form choices in constructor and get name and label from child class
+	 */
 	public function __construct()
 	{
 		$this->setFormChoices([
@@ -18,6 +29,10 @@ abstract class AbstractBoolFilter extends Choices implements ModifyQueryInterfac
 		parent::__construct($this->_getName(), $this->_getLabel());
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * @throws \InvalidArgumentException     Throws exception if choice is not a string or array
+	 */
 	public function addChoice($choice)
 	{
 		if (!is_string($choice) && !is_array($choice)) {
@@ -33,6 +48,9 @@ abstract class AbstractBoolFilter extends Choices implements ModifyQueryInterfac
 		return $this;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function apply(DB\QueryBuilder $queryBuilder)
 	{
 		$choice = $this->getChoices();
@@ -48,6 +66,11 @@ abstract class AbstractBoolFilter extends Choices implements ModifyQueryInterfac
 		$queryBuilder->where($this->_getStatement($choice));
 	}
 
+	/**
+	 * Validate that the choice value is either equal to 'yes' or 'no'
+	 *
+	 * @param $choice
+	 */
 	protected function _validateChoice($choice)
 	{
 		if (!is_string($choice)) {
@@ -59,7 +82,26 @@ abstract class AbstractBoolFilter extends Choices implements ModifyQueryInterfac
 		}
 	}
 
+	/**
+	 * Get the name of the filter
+	 *
+	 * @return string
+	 */
 	abstract protected function _getName();
+
+	/**
+	 * Get the label for the filter
+	 *
+	 * @return string
+	 */
 	abstract protected function _getLabel();
+
+	/**
+	 * Get the WHERE statement depending on the choice
+	 *
+	 * @param $choice
+	 *
+	 * @return string
+	 */
 	abstract protected function _getStatement($choice);
 }

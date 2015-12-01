@@ -11,6 +11,20 @@ use Message\Mothership\Report\Report\AppendQuery\FilterableInterface;
 use Message\Mothership\Report\Filter\Collection as FilterCollection;
 use Message\Mothership\Report\Chart\TableChart;
 
+/**
+ * Class Subscribers
+ * @package Message\Mothership\Mailing\Report
+ *
+ * @author  Thomas Marchant <thomas@mothership.ec>
+ *
+ * Report for displaying subscriber information.
+ *
+ * Displays:
+ * - Email address
+ * - Date subscribed
+ * - Whether subscriber is still subscribed
+ * - Whether subscriber has a user account
+ */
 class Subscribers extends AbstractReport implements FilterableInterface
 {
 	const MAILING_SUBSCRIBER_REPORT = 'mailing.subscriber.report';
@@ -25,6 +39,12 @@ class Subscribers extends AbstractReport implements FilterableInterface
 	 */
 	private $_dispatcher;
 
+	/**
+	 * @param DB\QueryBuilderFactory $builderFactory
+	 * @param UrlGenerator $routingGenerator
+	 * @param FilterCollection $filters
+	 * @param EventDispatcher $dispatcher
+	 */
 	public function __construct(
 		DB\QueryBuilderFactory $builderFactory,
 		UrlGenerator $routingGenerator,
@@ -41,6 +61,9 @@ class Subscribers extends AbstractReport implements FilterableInterface
 		$this->_dispatcher = $dispatcher;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function getCharts()
 	{
 		$data = $this->_dataTransform($this->_getQuery()->run(), "json");
@@ -59,6 +82,9 @@ class Subscribers extends AbstractReport implements FilterableInterface
 		return $this->_charts;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function getQueryBuilder()
 	{
 		if (null === $this->_queryBuilder) {
@@ -79,6 +105,9 @@ class Subscribers extends AbstractReport implements FilterableInterface
 		return $this->_queryBuilder;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function getColumns()
 	{
 		return [
@@ -89,11 +118,9 @@ class Subscribers extends AbstractReport implements FilterableInterface
 		];
 	}
 
-	protected function _getQuery()
-	{
-		return $this->getQueryBuilder()->getQuery();
-	}
-
+	/**
+	 * {@inheritDoc}
+	 */
 	protected function _dataTransform($data, $output = null)
 	{
 		$result = [];
@@ -124,6 +151,22 @@ class Subscribers extends AbstractReport implements FilterableInterface
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	protected function _getQuery()
+	{
+		return $this->getQueryBuilder()->getQuery();
+	}
+
+	/**
+	 * Get data for a user link to pass to the json data
+	 *
+	 * @param $userID
+	 * @param $value
+	 *
+	 * @return array
+	 */
 	private function _getUserLink($userID, $value)
 	{
 		return [
@@ -134,6 +177,9 @@ class Subscribers extends AbstractReport implements FilterableInterface
 		];
 	}
 
+	/**
+	 * Dispatch effect to apply filters
+	 */
 	private function _dispatchEvent()
 	{
 		$event = new ReportEvent;

@@ -67,6 +67,7 @@ class Services implements ServicesInterface
 			return new \Message\Mothership\Report\Filter\Collection([
 				$c['mailing.report.filter.user'],
 				$c['mailing.report.filter.subscribed'],
+				$c['mailing.report.filter.created_at'],
 			]);
 		};
 
@@ -76,6 +77,10 @@ class Services implements ServicesInterface
 
 		$services['mailing.report.filter.subscribed'] = function ($c) {
 			return new Mailing\Report\Filter\SubscribedFilter;
+		};
+
+		$services['mailing.report.filter.created_at'] = function ($c) {
+			return new Mailing\Report\Filter\CreatedAtFilter;
 		};
 
 		$this->registerSubscriptionServices($services);

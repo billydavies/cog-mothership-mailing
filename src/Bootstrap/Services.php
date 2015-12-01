@@ -64,7 +64,18 @@ class Services implements ServicesInterface
 		};
 
 		$services['mailing.report.subscribers.filters'] = function ($c) {
-			return new \Message\Mothership\Report\Filter\Collection([]);
+			return new \Message\Mothership\Report\Filter\Collection([
+				$c['mailing.report.filter.user'],
+				$c['mailing.report.filter.subscribed'],
+			]);
+		};
+
+		$services['mailing.report.filter.user'] = function ($c) {
+			return new Mailing\Report\Filter\UserFilter;
+		};
+
+		$services['mailing.report.filter.subscribed'] = function ($c) {
+			return new Mailing\Report\Filter\SubscribedFilter;
 		};
 
 		$this->registerSubscriptionServices($services);

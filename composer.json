@@ -22,7 +22,7 @@
 	},
 	"require": {
 		"php": ">=5.4.0",
-		"mothership-ec/cog" : "~4.0",
+		"mothership-ec/cog"                        : "~4.0",
 		"mothership-ec/cog-mothership-reports"     : "~2.2",
 	  	"mothership-ec/cog-mothership-user"        : "~4.0"
 	},

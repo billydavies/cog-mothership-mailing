@@ -81,14 +81,14 @@ class Edit implements DB\TransactionalInterface
 				created_by = :createdBy?in,
 				updated_at = :updatedAt?d,
 				updated_by = :updatedBy?in
-		', array(
-			'created_at' => $subscriber->authorship->createdAt(),
-			'created_by' => $subscriber->authorship->createdBy(),
+		', [
+			'createdAt'  => $subscriber->authorship->createdAt(),
+			'createdBy'  => $subscriber->authorship->createdBy(),
 			'updatedAt'  => $subscriber->authorship->updatedAt(),
 			'updatedBy'  => $subscriber->authorship->updatedBy(),
 			'email'      => $subscriber->email,
 			'subscribed' => $subscriber->subscribed,
-		));
+		]);
 
 		if ($this->_query instanceof DB\Transaction) {
 			return $subscriber;

@@ -35,7 +35,7 @@ class CreatedAtFilter extends DateRange implements ModifyQueryInterface
 		}
 
 		if ($this->getEndDate()) {
-			$queryBuilder->where('email_subscription.created_at <= ?d', [$this->getStartDate()]);
+			$queryBuilder->where('email_subscription.created_at <= ?d', [$this->getEndDate()]);
 		};
 	}
 }

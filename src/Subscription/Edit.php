@@ -66,6 +66,7 @@ class Edit implements DB\TransactionalInterface
 			$subscriber = new Subscriber;
 			$subscriber->email      = $email;
 			$subscriber->subscribed = (bool) $subscribed;
+			$subscriber->authorship->create(null, $this->_currentUser->id);
 		}
 
 		$subscriber->authorship->update(null, $this->_currentUser->id);
@@ -76,14 +77,18 @@ class Edit implements DB\TransactionalInterface
 			SET
 				email      = :email?s,
 				subscribed = :subscribed?b,
+				created_at = :createdAt?d,
+				created_by = :createdBy?in,
 				updated_at = :updatedAt?d,
 				updated_by = :updatedBy?in
-		', array(
+		', [
+			'createdAt'  => $subscriber->authorship->createdAt(),
+			'createdBy'  => $subscriber->authorship->createdBy(),
 			'updatedAt'  => $subscriber->authorship->updatedAt(),
 			'updatedBy'  => $subscriber->authorship->updatedBy(),
 			'email'      => $subscriber->email,
 			'subscribed' => $subscriber->subscribed,
-		));
+		]);
 
 		if ($this->_query instanceof DB\Transaction) {
 			return $subscriber;

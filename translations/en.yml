@@ -7,3 +7,6 @@ ms.mailing:
     submit: Subscribe
     feedback:
       success: Thank you. You have been added to our mailing list.
+  report:
+    subscribers:
+      description: This report displays subscribers as they exist in the database. By default it includes all subscribers from the past three months.

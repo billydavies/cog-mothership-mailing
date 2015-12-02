@@ -59,7 +59,8 @@ class Services implements ServicesInterface
 				$c['db.query.builder.factory'],
 				$c['routing.generator'],
 				$c['mailing.report.subscribers.filters'],
-				$c['event.dispatcher']
+				$c['event.dispatcher'],
+				$c['translator']
 			);
 		};
 

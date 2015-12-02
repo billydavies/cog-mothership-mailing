@@ -5,6 +5,7 @@ namespace Message\Mothership\Mailing\Report;
 use Message\Cog\DB;
 use Message\Cog\Routing\UrlGenerator;
 use Message\Cog\Event\Dispatcher as EventDispatcher;
+use Message\Cog\Localisation\Translator;
 use Message\Mothership\Report\Event\ReportEvent;
 use Message\Mothership\Report\Report\AbstractReport;
 use Message\Mothership\Report\Report\AppendQuery\FilterableInterface;
@@ -40,16 +41,23 @@ class Subscribers extends AbstractReport implements FilterableInterface
 	private $_dispatcher;
 
 	/**
+	 * @var Translator
+	 */
+	private $_translator;
+
+	/**
 	 * @param DB\QueryBuilderFactory $builderFactory
 	 * @param UrlGenerator $routingGenerator
 	 * @param FilterCollection $filters
 	 * @param EventDispatcher $dispatcher
+	 * @param Translator $translator
 	 */
 	public function __construct(
 		DB\QueryBuilderFactory $builderFactory,
 		UrlGenerator $routingGenerator,
 		FilterCollection $filters,
-		EventDispatcher $dispatcher
+		EventDispatcher $dispatcher,
+		Translator $translator
 	)
 	{
 		parent::__construct($builderFactory, $routingGenerator);
@@ -59,6 +67,8 @@ class Subscribers extends AbstractReport implements FilterableInterface
 		$this->_charts = [new TableChart];
 		$this->_filters = $filters;
 		$this->_dispatcher = $dispatcher;
+		$this->_translator = $translator;
+		$this->_description = $this->_translator->trans('ms.mailing.report.subscribers.description');
 	}
 
 	/**

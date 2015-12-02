@@ -30,6 +30,10 @@ class CreatedAtFilter extends DateRange implements ModifyQueryInterface
 	 */
 	public function apply(DB\QueryBuilder $queryBuilder)
 	{
+		if (!$this->getStartDate() && !$this->getEndDate()) {
+			$this->setStartDate(new \DateTime('- 3 months'));
+		}
+
 		if ($this->getStartDate()) {
 			$queryBuilder->where('email_subscription.created_at >= ?d', [$this->getStartDate()]);
 		}

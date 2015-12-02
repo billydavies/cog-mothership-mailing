@@ -48,6 +48,42 @@ class Services implements ServicesInterface
 			);
 		});
 
+		$services['mailing.reports'] = function ($c) {
+			return new \Message\Mothership\Report\Report\Collection([
+				$c['mailing.report.subscribers']
+			]);
+		};
+
+		$services['mailing.report.subscribers'] = function ($c) {
+			return new Mailing\Report\Subscribers(
+				$c['db.query.builder.factory'],
+				$c['routing.generator'],
+				$c['mailing.report.subscribers.filters'],
+				$c['event.dispatcher'],
+				$c['translator']
+			);
+		};
+
+		$services['mailing.report.subscribers.filters'] = function ($c) {
+			return new \Message\Mothership\Report\Filter\Collection([
+				$c['mailing.report.filter.user'],
+				$c['mailing.report.filter.subscribed'],
+				$c['mailing.report.filter.created_at'],
+			]);
+		};
+
+		$services['mailing.report.filter.user'] = function ($c) {
+			return new Mailing\Report\Filter\UserFilter;
+		};
+
+		$services['mailing.report.filter.subscribed'] = function ($c) {
+			return new Mailing\Report\Filter\SubscribedFilter;
+		};
+
+		$services['mailing.report.filter.created_at'] = function ($c) {
+			return new Mailing\Report\Filter\CreatedAtFilter;
+		};
+
 		$this->registerSubscriptionServices($services);
 	}
 

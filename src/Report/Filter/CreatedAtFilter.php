@@ -15,12 +15,16 @@ use Message\Mothership\Report\Filter\ModifyQueryInterface;
 class CreatedAtFilter extends DateRange implements ModifyQueryInterface
 {
 	/**
-	 * Set form to a use a `date` field
+	 * Set form to a use a `date` field, and set default time period to the last 3 months
 	 * {@inheritDoc}
 	 */
 	public function getForm()
 	{
 		$this->setFormType('date');
+
+		if (!$this->getStartDate() && !$this->getEndDate()) {
+			$this->setStartDate(new \Datetime('- 3 months'));
+		}
 
 		return parent::getForm();
 	}
@@ -30,10 +34,6 @@ class CreatedAtFilter extends DateRange implements ModifyQueryInterface
 	 */
 	public function apply(DB\QueryBuilder $queryBuilder)
 	{
-		if (!$this->getStartDate() && !$this->getEndDate()) {
-			$this->setStartDate(new \DateTime('- 3 months'));
-		}
-
 		if ($this->getStartDate()) {
 			$queryBuilder->where('email_subscription.created_at >= ?d', [$this->getStartDate()]);
 		}
